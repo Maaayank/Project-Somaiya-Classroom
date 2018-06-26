@@ -8,10 +8,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +32,10 @@ public class Main_Sign_In_Student extends AppCompatActivity implements View.OnCl
     private TextView SignIn;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
-
+    private Switch isEnlarged;
+    public static Boolean isZoom;
+    private float zoomFactor = 1.25f;
+    Magnify mag = new Magnify();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +46,22 @@ public class Main_Sign_In_Student extends AppCompatActivity implements View.OnCl
             finish();
             startActivity(new Intent(this,Student_Login_Activity.class));
         }
+        isEnlarged = findViewById(R.id.switch1);
+        isEnlarged.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               mag.enlarge(isEnlarged.isChecked(),findViewById(android.R.id.content),zoomFactor);
+            }
+        });
         email=(EditText) findViewById(R.id.email_id_tch);
         password=(EditText) findViewById(R.id.pass_tch);
         SignUp= (Button) findViewById(R.id.register);
         SignIn=(TextView)findViewById(R.id.signin);
         SignIn.setPaintFlags(SignIn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
         SignUp.setOnClickListener(this);
         SignIn.setOnClickListener(this);
     }
+
     private void registerUser(){
         String mail_id=email.getText().toString().trim();
         String pass=password.getText().toString().trim();
@@ -75,7 +87,10 @@ public class Main_Sign_In_Student extends AppCompatActivity implements View.OnCl
                         if(task.isSuccessful()){
                             //User registered successfully and logged in
                             finish();
-                            startActivity(new Intent(getApplicationContext(), Student_Login_Activity.class));
+                            Intent intent = new Intent(getApplicationContext(), Student_Login_Activity.class);
+                            //intent.putExtra("zoomIn",isEnlarged.isChecked());
+                            Magnify.data= isEnlarged.isChecked();
+                            startActivity(intent);
                         }
                         else{
                             Toast.makeText(Main_Sign_In_Student.this,"Registration Unsuccessful. Please try again.",Toast.LENGTH_LONG).show();

@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +29,20 @@ public class AlreadyRegisteredLoginStudent extends AppCompatActivity implements 
     private TextView SignUp;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
-
+    private Switch isEnlarged;
+    private float zoomFactor = 1.25f;
+    Magnify mag = new Magnify();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_already_registered_login_student);
+        isEnlarged = findViewById(R.id.switch1);
+        isEnlarged.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mag.enlarge(isEnlarged.isChecked(),findViewById(android.R.id.content),zoomFactor);
+            }
+        });
         email=(EditText) findViewById(R.id.email_id_tch);
         password=(EditText) findViewById(R.id.pass_tch);
         SignUp= (TextView) findViewById(R.id.signup);
@@ -41,7 +51,6 @@ public class AlreadyRegisteredLoginStudent extends AppCompatActivity implements 
         SignUp.setPaintFlags(SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         SignIn=(Button) findViewById(R.id.sign_in);
         progressDialog=new ProgressDialog(this);
-
         firebaseAuth=FirebaseAuth.getInstance();
 
         if(firebaseAuth.getCurrentUser()!=null){
@@ -82,7 +91,10 @@ public class AlreadyRegisteredLoginStudent extends AppCompatActivity implements 
                         if(task.isSuccessful()){
                             //start next activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), Student_Login_Activity.class));
+                            Intent intent = new Intent(getApplicationContext(), Student_Login_Activity.class);
+                            //intent.putExtra("zoomIn",(isEnlarged.isChecked()) ? 1 : 0);
+                            Magnify.data = isEnlarged.isChecked();
+                            startActivity(intent);
                         }
                         else{
                             Toast.makeText(AlreadyRegisteredLoginStudent.this, "Invalid Username or Password. Try Again.",Toast.LENGTH_LONG).show();

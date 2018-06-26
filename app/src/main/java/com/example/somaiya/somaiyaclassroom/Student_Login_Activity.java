@@ -18,6 +18,11 @@ public class Student_Login_Activity extends AppCompatActivity{
     private Button view_events;
     private Button Logout;
     private FirebaseAuth firebaseAuth;
+    //Bundle bundle = getIntent().getExtras();
+    //isZoom = bundle.getInt("zoomIn");
+    private float zoomFactor = 1.25f;
+    Magnify mag = new Magnify();
+    private boolean xyz = Magnify.getInstance().getData();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +32,8 @@ public class Student_Login_Activity extends AppCompatActivity{
         mPrevYears = (Button) findViewById(R.id.prevYears);
         mEasySol = (Button) findViewById(R.id.easySol);
         Logout = (Button) findViewById(R.id.logout);
+        if(Magnify.getInstance().getData())
+            mag.enlarge(true,findViewById(android.R.id.content),zoomFactor);
         firebaseAuth=FirebaseAuth.getInstance();
 
         if(firebaseAuth.getCurrentUser()==null){
