@@ -28,11 +28,7 @@
         <activity android:name=".Forgot_Password_Activity" />
         <activity android:name=".Main_Sign_In_Student" />
         <activity android:name=".Student_Login_Activity" />
-        <activity android:name=".courseMaterial" />
-        <activity android:name=".Syllabus" />
-        <activity android:name=".PreviousPapers" />
-        <activity android:name=".Addevent" />
-        <activity android:name=".Easysolution" />
+
         <activity android:name=".syl_act" />
         <activity android:name=".esysol_act" />
         <activity android:name=".lstppr_act" />
@@ -42,7 +38,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".Magnify"></activity>
+        <activity android:name=".AlreadyRegisteredLoginProf" />
+        <activity android:name=".AlreadyRegisteredLoginStudent"/>
     </application>
 
 </manifest>
