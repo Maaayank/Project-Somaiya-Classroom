@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal|center"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_color"
+    tools:context=".Student_Login_Activity">
+
+
+    <TextView
+        android:id="@+id/stu-login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        android:text="Welcome to Student Portal"
+        android:layout_marginBottom="40dp"
+        android:textColor="#404040"
+        android:textSize="23sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/syllabus"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Syllabus"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        android:textColor="#ffff"
+        app:fontFamily="@font/roboto_slab"/>
+
+    <Button
+        android:id="@+id/courseContent"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:inputType="text"
+        android:text="Course Material"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
+        android:background="@drawable/button_shape" />
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:id="@+id/textView1_stu"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="View Events"
+        android:onClick="openCalendar"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        app:fontFamily="@font/roboto_slab"
+        />
+
+    <Button
+        android:id="@+id/easySol"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Easy Solutions"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"/>
+
+    <Button
+        android:id="@+id/prevYears"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Last Year Papers"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab" />
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Logout"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab" />
+
+</LinearLayout>

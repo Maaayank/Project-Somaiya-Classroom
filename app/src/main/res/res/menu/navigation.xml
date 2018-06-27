@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+       android:id="@+id/syllabus"
+       android:icon="@drawable/icon_syllabus"
+        android:title="Syllabus" />
+
+    <item
+        android:title="Add Event"
+        android:icon="@drawable/icon_event"
+        android:id="@+id/event"/>
+
+    <item
+        android:id="@+id/papers"
+        android:icon="@drawable/icon_paper"
+        android:title="Last Year Papers"/>
+
+    <item
+        android:id="@+id/solution"
+        android:icon="@drawable/icon_solution"
+        android:title="EasySolutions"/>
+
+    <item
+        android:title="Course Material"
+        android:icon="@drawable/icon_material"
+        android:id="@+id/course"/>
+
+
+
+</menu>
