@@ -10,7 +10,7 @@ public class lstppr_act extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lstppr_act);
         Magnify mag = new Magnify();
-        float zoomFactor = 1.25f;
+        float zoomFactor = 1.15f;
         if(Magnify.getInstance().getData())
             mag.enlarge(true,findViewById(android.R.id.content),zoomFactor);
     }
