@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">113241594727-1je58pf4493gtn95pbnciivq3p55eldh.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://somaiya-classroom-123.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">113241594727</string>
+    <string name="google_api_key" translatable="false">AIzaSyCXxDJKEZJ2ANak-y6QPHLkOw9qsq3L3Nw</string>
+    <string name="google_app_id" translatable="false">1:113241594727:android:4e4ac99a714548ed</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCXxDJKEZJ2ANak-y6QPHLkOw9qsq3L3Nw</string>
+    <string name="google_storage_bucket" translatable="false">somaiya-classroom-123.appspot.com</string>
+    <string name="project_id" translatable="false">somaiya-classroom-123</string>
+</resources>
